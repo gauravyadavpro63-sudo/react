@@ -3,3 +3,37 @@ it makes the code easy to write and concise and optimsed the code
 
 react is just object 
 reactdom is object 
+
+search reactcdn on chrome
+
+<script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+<script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+
+const element=React.createElement("h1",{id:"first",className:"rahul",style:{backgroundColor:"blue",fontSize:"23px",color:"pink"}},"hello coder army");
+
+
+const root=ReactDOM.createRoot(document.getElementById("root"));
+root.render(element);
+
+what is cdn?
+content delivery network
+sabse pass wala server is cdn ,agar requested content hoga to dedega warna main server se mang kar save kar lega
+static data (data jo change na ho) wo cdn store karta hai
+dynamic data is stored in main server
+
+root.render() ye root ke andar jo bhi hoga sabko saaf kar dega aur jo naya render ho kar aya hai wo a gayega
+
+so to render multiple elements we need to encapsulate it in div 
+const element=React.createElement("h1",{},"helo coder army");
+const element2=React.createElement("h1",{},"kaise ho app");
+const div1=React.createElement("div",{},[element,element2]);
+
+const root=ReactDOM.createRoot(document.getElementById("root"));
+root.render(div1); 
+
+
+things are getting complicated even in react so here came 
+JSX;
+
+
+
