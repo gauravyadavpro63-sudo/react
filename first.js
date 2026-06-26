@@ -52,11 +52,11 @@
 // const root=ReactDOM.createRoot(document.getElementById("root"));  // to improve user experience
 // root.render(element);
 
-const element=React.createElement("h1",{},"helo coder army");
-const element2=React.createElement("h1",{},"kaise ho app");
-const div1=React.createElement("div",{},[element,element2]);
+// const element=React.createElement("h1",{},"helo coder army");
+// const element2=React.createElement("h1",{},"kaise ho app");
+// const div1=React.createElement("div",{},[element,element2]);
 
-const root=ReactDOM.createRoot(document.getElementById("root"));
-root.render(div1); 
+// const root=ReactDOM.createRoot(document.getElementById("root"));
+// root.render(div1); 
 
 

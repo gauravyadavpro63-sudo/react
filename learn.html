@@ -35,5 +35,51 @@ root.render(div1);
 things are getting complicated even in react so here came 
 JSX;
 
+we cant push this code to production because it need optimization
+optimize code: comment hata do ,space hata do, react and reactdom ka relevent code he use karna to reduce size of file
+this optimization will increase speed of website
+
+so bundler is required in ordered to get this optimization
+bundler: webpack,vite,parcel
+we will use parcel
+
+
+npm init
+this will give package.json its a meta data (data about data);
+npm instal parcel
+what is npm?
+npm (node package manager)
+Think of npm as an app store for JavaScript code. Instead of writing everything
+ yourself, you can download and use code (called packages or libraries) that other developers have already created.
+
+ after installing parcel it give node module which contain
+ parcel
+what is use of other files ?
+parcel is dependent of those files to execute itself this is called dependecy
+
+  now we dont need to write script for react and reactdom we can directly install from npm ;
+
+  npm instal react  (react added in node module folder)
+  npm install react-dom (")
+
+  version: ^19.2.7
+  this mean ( major minor patch )
+patch is when we fix bug 
+minor is when we add new functionality to that current version (we dont need to update our code)
+major is when we add major functionality and we need to update our code otherwise code fat jayega
+
+^ :( this say npm can take minor and patches changes)
+~ :( this say npm can take patches changes)
+
+whats packagelock.json?
+its contain exact version of all the packages 
+
+so if we want to share our files we dont need to share node_module
+just give him both json and code file and command npm install
+this will install  node_modules  of that versions 
+
+agar sirf package.json de hai packagelock.json nhi di hai to wo tab bhi code fatega nhi
+because it see dependecies and download according to it
+
 
 
