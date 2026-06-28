@@ -60,3 +60,14 @@
 // root.render(div1); 
 
 
+import react from "react";
+import reactdom from "react-dom/client";
+
+
+
+const element=react.createElement("h1",{},"helo coder army");
+const element2=react.createElement("h1",{},"kaise ho app");
+const div1=react.createElement("div",{},[element,element2]);
+
+const root=reactdom.createRoot(document.getElementById("root"));
+root.render(div1); 
