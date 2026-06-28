@@ -65,9 +65,34 @@ import reactdom from "react-dom/client";
 
 
 
-const element=react.createElement("h1",{},"helo coder army");
-const element2=react.createElement("h1",{},"kaise ho app");
-const div1=react.createElement("div",{},[element,element2]);
+// const element=react.createElement("h1",{},"helo coder army");
+// const element2=react.createElement("h1",{},"kaise ho app");
+// const div1=react.createElement("div",{},[element,element2]);
 
-const root=reactdom.createRoot(document.getElementById("root"));
-root.render(div1); 
+// const root=reactdom.createRoot(document.getElementById("root"));
+// root.render(div1); 
+
+// const newelement=<h1>Hello coder army</h1>
+// const root=document.getElementById("root");
+// const container =reactdom.createRoot(root);
+// container.render(newelement);
+
+// const newelment=(
+//     <>
+//         <h1>hello coder army</h1>
+//         <h2>maja aya muze</h2>
+//     </>
+// )
+// const control=reactdom.createRoot(document.getElementById("root"));
+// control.render(newelment)
+
+
+//  function based component
+
+ function greet(){
+    return <h1>aur bhai kaisa hai</h1>
+ }
+
+const functioncomponent=greet();
+const reactroot=reactdom.createRoot(document.getElementById("root"))
+reactroot.render(functioncomponent);

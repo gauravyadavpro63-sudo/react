@@ -103,7 +103,96 @@ how to deploy  and host website
 upload dist containing optimised code 
 
 
-jsx( java script xml)
+jsx( java script xml) 
+html jaisa code direct js me lihs sakte hai
+
+
+const newelement=<h1>Hello coder army</h1>
+const root=document.getElementById("root");
+const container =reactdom.createRoot(root);
+container.render(newelement);
+
+jsx code is coverted to react code this is done by babel
+which is present in node-modules
+babel is transpiler
+
+<!-- how to create children in react -->
+const newelment=(
+    <div>
+        <h1 id="first" className="second">hello coder army</h1>
+        <h2>maja aya muze</h2>
+    </div>
+)
+<!-- put in div because it ecpect single element-->
+
+if you dont want div then use <>
+use className instead of class
+
+<!-- js ke exprsssion bhi daal sakte hai jsx me -->
+const names="anshika";
+const newelment=(
+    <div>
+        <h1 id="first" className="second">hello coder army {names}</h1>
+        <h2>maja aya muze</h2>
+    </div>
+)
+
+make css file and add css
+
+<!-- usermade attribute -->
+const newelment=(
+    <div>
+        <h1 money="{23}">hello coder army {names}</h1>
+        <h2>maja aya muze</h2>
+    </div>
+)
+this will go as number
 
 
 
+const obj2={
+  backgroundColor:"black",
+  color:"pink",
+  fontSize:"32px"
+}
+
+
+const newelment=(
+    <div>
+        <h1 style={obj2}>hello coder army {names}</h1>
+        <h2>maja aya muze</h2>
+    </div>
+)
+sytly attribute expect object we can also write as
+
+<h1 style={{backgroundColor:"black",fontsize:"32"}}>hello coder army</h1>
+so dont get confuse
+
+
+
+
+
+
+<!-- React component -->
+
+ function based component
+
+ function greet(){
+    return <h1>aur bhai kaisa hai</h1>
+ }
+
+const functioncomponent=greet();
+const reactroot=ReactDOM.createRoot(document.getElementById("root"))
+reactroot.render(functioncomponent);
+
+<!-- to print multiple function -->
+ function greet(){
+    return <h1>aur bhai kaisa hai</h1>
+ }
+ function meet(){
+    return <h1>aur bhai kaisa hai</h1>
+ }
+ const newelement2=greet();
+ constt newelement1=meet();
+const newelement3=<>{newelement1} {newelement2}</>
+reactroot.render(newelement3);
