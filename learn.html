@@ -128,7 +128,7 @@ const newelment=(
 if you dont want div then use <>
 use className instead of class
 
-<!-- js ke exprsssion bhi daal sakte hai jsx me -->
+<!-- js ke exprsssion bhi daal sakte hai jsx me(not object or statement) like string number array-->
 const names="anshika";
 const newelment=(
     <div>
@@ -196,3 +196,30 @@ reactroot.render(functioncomponent);
  constt newelement1=meet();
 const newelement3=<>{newelement1} {newelement2}</>
 reactroot.render(newelement3);
+
+
+vite is more optimised and fast and trending so we will use vite
+npm create vite@latest
+npm run dev (to run the code)
+npm run build (production ready code)
+ye sab ham package.json me dekh sakte hai
+
+
+<!-- jsx why of calling function -->
+function Greet(){     (first leller should be capital)
+    return <h2>ram ram </h2>
+}
+const element2=<greet/>
+const root=ReactDOM.createRoot(document.getElementById("root"))
+root.render(element2);
+
+
+
+function Greet(props){     (first leller should be capital)
+    return <h2>ram ram {props.name} {props.age}</h2>
+}
+const element2=<greet name="rohti" age="23"/>(arguments)
+const root=ReactDOM.createRoot(document.getElementById("root"))
+root.render(element2);
+
+
