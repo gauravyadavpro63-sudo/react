@@ -236,3 +236,42 @@ export function meet(){
 import {meet} from ./assets/data"
 
 import anshi as kaneki from "./asset"  ( now u can use the function as kaneki instead of anshi)
+
+
+
+
+we will never manipulate dom in react its not good habbit 
+
+
+function increment(){
+  count=count+1;
+  document.querySelector("h1").innerHTML=`The count is ${count}`;
+}
+<button onClick={increment}>increase</button>
+
+we will not do this insted we will use hooks 
+hook is type of function
+we have different type of hooks 
+most common hook in useState (manupulate ui)
+
+import React,{useState} from "react";
+use hook inside the comoponent
+
+ let [count,setcount]=useState(0);
+(intial value of count is 0 and setcount is function)
+
+function increment(){
+  count=count+1;
+  setcount(count);
+}
+(setcount should be called with count as argument everytime the count changes )
+
+let [filter,setfilter]=useState(arr);
+function Sortarray(){
+  let clone=[...filter];
+  clone.sort((a,b)=>{
+  return a.price-b.price;
+  })
+  setfilter(clone);
+}
+arr are stored in heep as adddress so we need to change array otherwise using  same array will not be mannpulated by useState
