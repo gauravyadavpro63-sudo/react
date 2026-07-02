@@ -247,7 +247,7 @@ function increment(){
   count=count+1;
   document.querySelector("h1").innerHTML=`The count is ${count}`;
 }
-<button onClick={increment}>increase</button>
+<button onClick={increment}>increase</button> // expect a callback function
 
 we will not do this insted we will use hooks 
 hook is type of function
@@ -275,3 +275,35 @@ function Sortarray(){
   setfilter(clone);
 }
 arr are stored in heep as adddress so we need to change array otherwise using  same array will not be mannpulated by useState
+
+<!-- how things working here -->
+function Main(){
+  const [color,setcolor]=useState("black");
+  document.body.style.backgroundColor=color;
+  <button style={{backgroundColor:"green"}}  onClick={()=>setcolor("green")}>green</button>
+
+  first it will have black color background but after we click setcolor will call the main function again and
+  usestate("green") this will be new value of usestate and it will go in color and background color will become
+  green 
+
+ {primitive data type ke liye 1 baar extra render karega fir nhi karega jabki non primitive ke liye reference change hoga tabhi reder karega}
+
+
+ <!-- useEffect -->
+last me chalta hai 
+
+const [color,setcolor]=useState("black");
+   useEffect(()=>{
+      document.body.style.backgroundColor=color;
+   },[color]);
+   <button style={{backgroundColor:"green"}}  onClick={()=>setcolor("green")}>green</button>
+
+   setcolor se color greent hoga fir Main function dobara call hoga,color ke andar green strore hoga
+   fir last me useeffect execute hoga aur backgrouond color green ho gayega
+   useEffect me extra execution wali problen nhi hoti thats why we use useEffect;
+   jab dom manipulation wali cheje ho to use useeffect me daad dooo
+
+   <!-- memo hook -->
+   export default React.memo(Backcolor);
+   React.memo prevents unnecessary re-renders of a component when its props have not changed.
+   hamesa use na kare
