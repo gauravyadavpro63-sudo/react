@@ -307,3 +307,27 @@ const [color,setcolor]=useState("black");
    export default React.memo(Backcolor);
    React.memo prevents unnecessary re-renders of a component when its props have not changed.
    hamesa use na kare
+
+   <!-- closure in js -->
+
+   
+function greet(){
+   let a=2;
+   function meet(){
+      console.log(a);
+   }
+   return meet;
+}
+const num=greet();
+num();
+
+this will print 2 even thoug greet is destroyed because meet is stored in heep
+and it also store the reference to all variable used there so 
+that is called closure (The function + the variables it remembers from its outer scope = closure.)
+
+<!-- usecallback hook -->
+ useCallback is a React Hook that memoizes a function. It returns the same function reference between renders unless one of its dependencies changes.
+ useCallback(()=>{
+
+    function//
+ },[dependecies]);

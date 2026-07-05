@@ -60,8 +60,8 @@
 // root.render(div1); 
 
 
-import react from "react";
-import reactdom from "react-dom/client";
+// import react from "react";
+// import reactdom from "react-dom/client";
 
 
 
@@ -89,10 +89,22 @@ import reactdom from "react-dom/client";
 
 //  function based component
 
- function greet(){
-    return <h1>aur bhai kaisa hai</h1>
- }
+//  function greet(){
+//     return <h1>aur bhai kaisa hai</h1>
+//  }
 
-const functioncomponent=greet();
-const reactroot=reactdom.createRoot(document.getElementById("root"))
-reactroot.render(functioncomponent);
+// const functioncomponent=greet();
+// const reactroot=reactdom.createRoot(document.getElementById("root"))
+// reactroot.render(functioncomponent);
+
+
+
+function greet(){
+   let a=2;
+   function meet(){
+      console.log(a);
+   }
+   return meet;
+}
+const num=greet();
+num();
