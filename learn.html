@@ -361,3 +361,82 @@ Adding event listeners
 
 
 real world me useeffect use hota hai
+
+
+<!-- useRef hook -->
+ it dont re-render components
+ useRef is a React Hook that stores a value which persists across renders but does not trigger a re-render when it changes.
+   
+ const money = useRef(0);
+
+<button
+  onClick={() => {
+    money.current=money.current+1;
+    console.log(money.current);
+  }}
+>
+  Increase
+</button>
+
+
+
+
+<!-- state liftng -->
+
+
+Move the state to the closest common parent component so multiple child components can share and update the same data.
+
+function Main(){
+ const[count,setcount]=useState(0);
+  return(
+    <>
+    <h1>helo</h1>
+    <Second count={count} setcount={setcount}/>
+    <Third count={count} setcount={setcount}/>
+    </>
+  )
+}
+
+Props drilling is when you pass props through multiple components just to reach a deeply nested component,
+ even though the intermediate components don't use those props.
+
+ Main
+ │
+ ▼
+Second
+ │
+ ▼
+Third
+ │
+ ▼
+Fourth
+
+to solve this problem we have hook
+
+<!-- useContext -->
+
+create new jsx file 
+
+import {createContext} from "react"
+const globalcontext=createContext("rohit");
+export default globalcontext;
+
+now in whatever component u want to use this data 
+import globalcontext from "./global.jsx"
+import { useContext } from "react";
+  const data=useContext(globalcontext);
+
+
+  <!-- how to use usestate in any child no need to propsdrilling-->
+
+  import globalcontext from "./component/global.jsx";
+import { useContext } from "react";
+
+    <globalcontext.Provider  value={{count,setcount}}>  //object   (rohit will get overwriten )
+    <h1>helo</h1>
+    <Second count={count} setcount={setcount}/>
+    <Third count={count} setcount={setcount}/>
+    </globalcontext.Provider>
+    </>
+
+     const data=useContext(globalcontext);
