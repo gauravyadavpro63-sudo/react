@@ -439,7 +439,7 @@ import { useContext } from "react";
     </globalcontext.Provider>
     </>
 
-     const data=useContext(globalcontext);z
+     const data=useContext(globalcontext);
 
      <!-- routing -->
 
@@ -458,3 +458,79 @@ http://localhost:5173/       → path = "/"     (both are same)
        Router params are dynamic values in the URL that React Router extracts and gives to your component.
 
        <!-- custom hook -->
+
+       A custom hook is a reusable JavaScript function that starts with use and encapsulates React hook logic
+        so it can be shared across multiple components.
+
+        import { useState } from "react";
+
+function useCounter() {
+  const [count, setCount] = useState(0);
+
+  function increment() {
+    setCount(count + 1);
+  }
+
+  function decrement() {
+    setCount(count - 1);
+  }
+
+  return { count, increment, decrement };
+}
+export defalt useCounter 
+
+   import useCounter from "./..."
+
+   
+function App() {
+  const { count, increment, decrement } = useCounter();
+
+  return (
+    <>
+      <h1>{count}</h1>
+      <button onClick={increment}>+</button>
+      <button onClick={decrement}>-</button>
+    </>
+  );
+}
+
+
+<!-- Redux -->
+
+
+Redux is a state management library for React that stores an application's shared data in a single central store, 
+allowing any component to read or update that data in a predictable way.
+
+we can do it with usecontext but for heavy apps its better to learn redux as in use context may
+You may end up with many context providers.
+Updates can cause more components to re-render than necessary.
+Organizing complex state becomes harder as the app grows.
+
+1. Store 🏪
+The store is the central place where all the application's global state is kept.
+Any component can read this data or request an update.
+
+2. Reducer ⚙️
+The reducer is a function that decides how the store should change when an action is dispatched.
+
+3.dispatch🚀
+Dispatch is a function used to send an action to the Redux store.
+
+4.slice🍰
+A slice is a portion of the Redux store along with the reducer and actions related to that portion of the state.
+slice should be unique 
+
+In a large project:
+
+Developer A works on userSlice.
+Developer B works on cartSlice.
+Developer C works on productSlice.
+
+Everyone can work independently with fewer conflicts.
+
+
+npm install react-redux  (Job: Connects React with Redux.)
+npm install @reduxjs/toolkit (Job: Creates and manages your Redux store.)
+
+read mini8   
+
