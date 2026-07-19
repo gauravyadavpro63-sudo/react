@@ -554,3 +554,90 @@ read mini8
 
 mini9 read 
 
+
+ <!-- some knowledge about react -->
+
+ react is better over js because it optimise reflow and repaint
+
+ <!-- vertual dom -->
+
+
+ Virtual DOM is a lightweight JavaScript copy of the real DOM used by React.
+It helps React update the UI efficiently.
+
+
+How it works:
+State Change
+     ↓
+New Virtual DOM created
+     ↓
+Compare with Old Virtual DOM (Diffing)
+     ↓
+Find changed parts
+     ↓
+Update only those parts in Real DOM
+     ↓
+Browser updates screen
+
+Virtual DOM is a JavaScript object, not a real browser DOM.
+It exists in memory.
+React uses it to minimize unnecessary DOM updates.
+React does not update the whole page; it updates only changed elements.
+
+🏠 Real DOM = actual house (with doors, rooms, electricity, everything working)
+
+📐 Virtual DOM = blueprint of the house (easy to compare and edit)
+
+⚛️ React State Batching — Notes
+setState() (e.g., setCount()) does not update state immediately.
+React queues (batches) multiple state updates during the same event.
+After batching, React calculates the final state.
+Then React re-renders the component once with the updated state.
+setCount(1)
+setCount(1)
+      ↓
+Batched
+      ↓
+Final state = 1
+      ↓
+One re-render
+
+setCount(prev => prev + 1);
+setCount(prev => prev + 1);   //now takes latest value
+
+prev = 0 → 1
+prev = 1 → 2
+      ↓
+Final state = 2
+      ↓
+One re-render
+
+<!-- why unique key is used in child -->
+
+Helps React identify which item changed.
+Prevents unnecessary DOM updates.
+Preserves the correct state of components.
+Improves rendering performance.
+
+What React does
+Old List
+↓
+Compare keys
+↓
+Find added/removed/moved items
+↓
+Update only necessary DOM elements
+
+Why not use index?
+
+❌
+
+key={index}
+
+Problems:
+
+Wrong identification when items are inserted, deleted, or reordered.
+Can cause incorrect component state.
+May lead to unnecessary re-renders.
+
+key nhi diya to react index ko hi key dedega
